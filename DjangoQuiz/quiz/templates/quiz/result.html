@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+{% extends 'home.html' %}
+{% block  content %}
+
+<table border="3">
+    <tr>
+        <th>S.N</th>
+        <th>Question</th>
+        <th>Score</th>
+    </tr>
+    {% for sc in score %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ sc.question }}</td>
+            <td>{{ sc.score }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="2">Total</td>
+        <td>{{ total }}</td>
+    </tr>
+</table>
+{% endblock %}
+</body>
+</html>
